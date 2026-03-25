@@ -1,6 +1,7 @@
 def get_mask_card_number(card_number):
     print(
-        f"Номер карты: {card_number[0:4]} {card_number[4:6]}** **** {card_number[12:16]}"
+        f"Номер карты: {card_number[0:4]} {card_number[4:6]}** ****"
+        f" {card_number[12:16]}"
     )
 
 
