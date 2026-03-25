@@ -10,15 +10,19 @@ def filter_by_state(list_transitions, state="EXECUTED"):
 
     return new_list_transitions
 
+
 def sort_by_date(list_transitions, reverse=False):
     # new_list_transitions = []
     # new_list_transitions.extend(list_transitions)
 
     # new_list_transitions.sort(key=lambda x: x["date"], reverse=reverse)
 
-    new_list_transitions = sorted(list_transitions, key=lambda x: x["date"], reverse=reverse)
+    new_list_transitions = sorted(list_transitions,
+                                  key=lambda x: x["date"], reverse=reverse
+                                  )
 
     return new_list_transitions
+
 
 transitions = [
     {
@@ -53,8 +57,12 @@ transitions = [
     }
 ]
 
-print(filter_by_state(transitions))     # возвращает транзакции 1, 3 и 4
-print(filter_by_state(transitions, "CANCELED"))     # возвращает транзакции 2 и 5
+# возвращает транзакции 1, 3 и 4
+print(filter_by_state(transitions))
+# возвращает транзакции 2 и 5
+print(filter_by_state(transitions, "CANCELED"))
 print()
-print(sort_by_date(transitions))     # порядок - сначала старые (2, 1, 3, 5, 4)
-print(sort_by_date(transitions, reverse=True))     # порядок - сначала новые (4, 5, 3, 1, 2)
+# порядок - сначала старые (2, 1, 3, 5, 4)
+print(sort_by_date(transitions))
+# порядок - сначала новые (4, 5, 3, 1, 2)
+print(sort_by_date(transitions, True))
